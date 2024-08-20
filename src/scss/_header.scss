@@ -1,0 +1,123 @@
+#s__header {
+    background-color: grey;
+    border-bottom: 1px solid #eaeaea;
+  
+    .header-container {
+      @include flex(row, center, space-between);
+      padding: 10px 20px;
+  
+      .logo img {
+        max-height: 50px;
+      }
+  
+      .nav-menu {
+        ul {
+          list-style: none;
+          display: flex;
+          gap: 20px;
+          li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s;
+  
+            &:hover {
+              color: #007bff;
+            }
+          }
+        }
+      }
+  
+      .social-icons {
+        a {
+          margin-left: 15px;
+          color: #333;
+          font-size: 20px;
+          transition: color 0.3s;
+  
+          &:hover {
+            color: #007bff;
+          }
+        }
+      }
+  
+      .mobile-menu {
+        display: none;
+      }
+    }
+  
+    .mobile-nav {
+        margin-top: 74px;
+      display: none;
+      position: fixed; /* Altera para fixed */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 45%;
+      background-color: rgba(255, 255, 255, 0.95); /* Adiciona um fundo levemente transparente */
+      z-index: 9999; 
+  
+      ul {
+        list-style: none;
+        padding: 20px;
+  
+        li a {
+          display: block;
+          padding: 15px;
+          text-decoration: none;
+          font-size: 24px; /* Tamanho maior para o menu mobile */
+          color: #333;
+          text-align: center;
+  
+          &:hover {
+            background-color: #f0f0f0;
+          }
+        }
+      }
+    }
+  }
+  
+  // Responsividade
+  @media (max-width: 768px) {
+    .header-container {
+      .nav-menu {
+        display: none;
+      }
+  
+      .social-icons {
+        display: none;
+      }
+  
+      .mobile-menu {
+        display: flex !important;
+        @include flex(column, center, center);
+        width: 50px;
+        height: 50px;
+  
+        .hamburger {
+          cursor: pointer;
+          @include flex(column, center, center);
+          width: 30px;
+          height: 40px;
+          gap: 8px;
+  
+          .bar {
+            width: 100%;
+            height: 4px !important;
+            border-radius: 50px !important;
+            background-color: var(--secondary-color);
+          }
+        }
+      }
+    }
+  
+    .mobile-nav.active {
+      display: flex !important; /* O menu agora cobre toda a tela */
+      position: fixed;
+      background: white;
+      justify-content: center;
+      align-items: center;
+      transition: height 0.5s ease, opacity 0.5s ease; /* Mesma transição que a inicial */
+    }
+  }
+  

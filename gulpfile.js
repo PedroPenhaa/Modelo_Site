@@ -37,6 +37,9 @@ function serve() {
     gulp.watch('src/html/**/*.html').on('change', browserSync.reload);
 }
 
+// Adiciona a tarefa default
+gulp.task('default', gulp.series(styles, scripts, html, serve));
+
 exports.styles = styles;
 exports.scripts = scripts;
 exports.html = html;

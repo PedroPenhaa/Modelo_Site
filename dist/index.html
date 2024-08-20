@@ -5,9 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site Modelo</title>
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="dist/css/main.css">
 </head>
 <body>
-    <h1>Olá, Mundo!</h1>
+  
+    <main>
+
+        <!--============================= Header =============================-->
+        <header class="container-fluid" id="s__header">
+            <div class="container header-container">
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="#">
+                        <img src="path/to/logo.png" alt="Logo" />
+                    </a>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="#s__home">Home</a></li>
+                        <li><a href="#s__imoveis">Imóveis</a></li>
+                        <li><a href="#s__servicos">Serviços</a></li>
+                        <li><a href="#s__sobre">Sobre</a></li>
+                        <li><a href="#s__contato">Contato</a></li>
+                    </ul>
+                </nav>
+        
+                <!-- Social Icons -->
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                </div>
+        
+               <!-- Mobile Menu Button -->
+                <div class="mobile-menu">
+                    <button class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                </div>
+            </div>
+        
+            <!-- Mobile Navigation -->
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="#s__home">Home</a></li>
+                    <li><a href="#s__imoveis">Imóveis</a></li>
+                    <li><a href="#s__servicos">Serviços</a></li>
+                    <li><a href="#s__sobre">Sobre</a></li>
+                    <li><a href="#s__contato">Contato</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!--============================= Home =============================-->
+        <section class="container-fluid" id="s__home">
+
+        </section>
+
+        <!--============================= Imóveis =============================-->
+        <section class="container-fluid" id="s__imoveis">
+
+        </section>
+
+        <!--============================= Serviços =============================-->
+        <section class="container-fluid" id="s__servicos">
+
+        </section>
+
+        <!--============================= Sobre =============================-->
+        <section class="container-fluid" id="s__sobre">
+
+        </section>
+        
+        <!--============================= Mensagem =============================-->
+        <section class="container-fluid" id="s__mensagem">
+
+        </section>   
+        
+        <!--============================= Contato =============================-->
+        <section class="container-fluid" id="s__contato">
+
+        </section>              
+
+        <!--============================= Links Úteis =============================-->
+        <section class="container-fluid" id="s__links">
+
+        </section> 
+
+        <!--============================= Footer =============================-->
+        <footer class="container-fluid" id="s__footer">
+
+        </footer>
+
+    </main>
+
     <script src="js/app.min.js"></script>
+
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.mobile-nav').classList.toggle('active');
+        });
+    </script>
+
 </body>
 </html>
