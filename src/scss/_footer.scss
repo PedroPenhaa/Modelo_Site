@@ -1,0 +1,29 @@
+#s__footer{
+    padding: 10px;
+    background-color: black;
+    .container{
+        @include flex(row, center, space-between);
+        p {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem; 
+          }
+    }
+
+
+ /*---------------------------- Responsividade ----------------------------*/
+    @media (max-width: 768px) {
+        .container{
+            @include flex(column, center, center);
+            p {
+                color: white;
+                font-weight: bold;
+                font-size: 1rem; 
+              }
+        }
+
+    }
+}
+
+
+

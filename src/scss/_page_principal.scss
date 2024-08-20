@@ -4,5 +4,17 @@ section {
     border-bottom: 1px solid black;
 }
 
+.container{
+    padding: 20px;
+}
 
 // ------------------ Home ------------------ //
+
+#s__home{ 
+    .container{
+        h1{
+            color: white;
+        }
+
+    }
+}

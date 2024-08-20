@@ -6,6 +6,10 @@
     <title>Site Modelo</title>
     <link rel="stylesheet" href="css/style.min.css">
     <link rel="stylesheet" href="dist/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+
 </head>
 <body>
   
@@ -13,11 +17,12 @@
 
         <!--============================= Header =============================-->
         <header class="container-fluid" id="s__header">
+           
             <div class="container header-container">
                 <!-- Logo -->
                 <div class="logo">
                     <a href="#">
-                        <img src="path/to/logo.png" alt="Logo" />
+                        <img src="../img/logo" alt="Logo" />
                     </a>
                 </div>
                 
@@ -34,9 +39,9 @@
         
                 <!-- Social Icons -->
                 <div class="social-icons">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fas fa-phone"></i></a>
                 </div>
         
                <!-- Mobile Menu Button -->
@@ -59,46 +64,64 @@
                     <li><a href="#s__contato">Contato</a></li>
                 </ul>
             </nav>
+
         </header>
 
         <!--============================= Home =============================-->
         <section class="container-fluid" id="s__home">
-
+            <div class="container">
+                <h1>Home</h1>
+            </div>
         </section>
 
         <!--============================= Imóveis =============================-->
         <section class="container-fluid" id="s__imoveis">
-
+            <div class="container">
+                <h1>Imóveis</h1>
+            </div>
         </section>
 
         <!--============================= Serviços =============================-->
         <section class="container-fluid" id="s__servicos">
-
+            <div class="container">
+                <h1>Serviços</h1>
+            </div>
         </section>
 
         <!--============================= Sobre =============================-->
         <section class="container-fluid" id="s__sobre">
-
+            <div class="container">
+                <h1>Sobre</h1>
+            </div>
         </section>
         
         <!--============================= Mensagem =============================-->
         <section class="container-fluid" id="s__mensagem">
-
+            <div class="container">
+                <h1>Mensagem</h1>
+            </div>
         </section>   
         
         <!--============================= Contato =============================-->
         <section class="container-fluid" id="s__contato">
-
+            <div class="container">
+                <h1>Contato</h1>
+            </div>
         </section>              
 
         <!--============================= Links Úteis =============================-->
         <section class="container-fluid" id="s__links">
-
+            <div class="container">
+                <h1>Links Úteis</h1>
+            </div>
         </section> 
 
         <!--============================= Footer =============================-->
         <footer class="container-fluid" id="s__footer">
-
+            <div class="container">
+                <p>Todos os direitos reservados a Empresa Exemplo © 2024</p>
+                <p>Desenvolvido por Pedro Penha</p>
+            </div>
         </footer>
 
     </main>
@@ -107,9 +130,11 @@
 
 
     <script>
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.mobile-nav').classList.toggle('active');
-        });
+       document.querySelector('.hamburger').addEventListener('click', function() {
+       document.querySelector('.mobile-nav').classList.toggle('active');
+       document.querySelector('.hamburger').classList.toggle('active');
+       });
+
     </script>
 
 </body>
