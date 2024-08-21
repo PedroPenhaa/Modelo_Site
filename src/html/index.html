@@ -31,7 +31,14 @@
                 <nav class="nav-menu">
                     <ul>
                         <li><a href="#s__home">Home</a></li>
-                        <li><a href="#s__imoveis">Imóveis</a></li>
+                        <li>
+                            <a href="#s__imoveis" class="imoveis-link" onclick="toggleDropdown()">Imóveis</a>
+                            <ul id="imoveisDropdown" class="dropdown">
+                                <li><a href="#s__sobre">Locação</a></li>
+                                <li><a href="#">Venda</a></li>
+                                <li><a href="#">Terreno</a></li>
+                            </ul>
+                        </li>
                         <li><a href="#s__servicos">Serviços</a></li>
                         <li><a href="#s__sobre">Sobre</a></li>
                         <li><a href="#s__contato">Contato</a></li>
@@ -71,13 +78,22 @@
         <!--============================= Home =============================-->
       <section class="container-fluid" id="s__home">
 
-            <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
-                centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
-                <swiper-slide>Slide 1</swiper-slide>
-                <swiper-slide>Slide 2</swiper-slide>
-                <swiper-slide>Slide 3</swiper-slide>
-                <swiper-slide>Slide 4</swiper-slide>
-                <swiper-slide>Slide 5</swiper-slide>
+            <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="10"
+                centered-slides="true" autoplay-delay="5500" autoplay-disable-on-interaction="false">
+               
+                <swiper-slide>
+                    <img src="img/background_1.jpg" >
+                </swiper-slide>
+
+                <swiper-slide>
+                    <img src="img/background_2.jpg" >
+                </swiper-slide>
+
+                <swiper-slide>
+                    <img src="img/background_3.jpg" >
+                </swiper-slide>
+
+               
             </swiper-container>
 
 
@@ -159,15 +175,41 @@
 
   <!-- Initialize Swiper -->
   <script>
-    const progressCircle = document.querySelector(".autoplay-progress svg");
-    const progressContent = document.querySelector(".autoplay-progress span");
+  const swiper = new Swiper('.swiper-container', {
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  spaceBetween: 30,
+  centeredSlides: true,
+  autoplay: {
+    delay: 20000, // 20 segundos entre cada slide
+    disableOnInteraction: false,
+  },
+  speed: 3000, // Velocidade da transição ajustada para 3 segundos
+  effect: 'fade', // Adiciona efeito de fade para uma transição mais suave
+});
 
-    const swiperEl = document.querySelector("swiper-container");
-    swiperEl.addEventListener("autoplaytimeleft", (e) => {
-      const [swiper, time, progress] = e.detail;
-      progressCircle.style.setProperty("--progress", 1 - progress);
-      progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-    });
+
+
+
+
+
+    function toggleDropdown() {
+    var dropdown = document.getElementById("imoveisDropdown");
+    if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+    } else {
+        dropdown.style.display = "block";
+    }
+}
+
+
+
   </script>
 
 
