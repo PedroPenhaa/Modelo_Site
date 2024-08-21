@@ -13,13 +13,18 @@
 
  /*---------------------------- Responsividade ----------------------------*/
     @media (max-width: 768px) {
+        padding: 8px 0 2px 0;
         .container{
             @include flex(column, center, center);
+            gap: 0;
             p {
                 color: white;
                 font-weight: bold;
-                font-size: 1rem; 
-              }
+                font-size: 0.8rem; 
+                strong{
+                    font-size: 0.9rem;
+                }
+            }
         }
 
     }
