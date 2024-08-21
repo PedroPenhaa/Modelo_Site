@@ -1,24 +1,30 @@
 #s__header {
-  background-color: grey;
+  background-color: black;
   border-bottom: 1px solid #eaeaea;
 
   .header-container {
     @include flex(row, center, space-between);
-    padding: 10px 20px;
-
-    .logo img {
-      max-height: 50px;
-      
+    padding: 12px 20px 5px 20px;
+    min-width: 95%;
+    border: none;
+    .logo {
+      img {
+        max-width: 120px; // Definindo o tamanho máximo da logo
+        height: auto;     // Mantendo a proporção da imagem
+        display: block;   // Garante que a imagem seja tratada como um bloco
+      }
     }
 
     .nav-menu {
       ul {
         list-style: none;
-        display: flex;
-        gap: 20px;
+        @include flex(row, center, center);
+        gap: 30px;
+        margin: 0;
         li a {
           text-decoration: none;
-          color: #333;
+          font-size: 1.8rem;
+          color: white;
           font-weight: bold;
           transition: color 0.3s;
 
@@ -30,15 +36,14 @@
     }
 
     .social-icons {
-      width: 300px;
-      padding: 2px;
-      font-size: 24px;
+      @include flex(row, center, center);
+      gap: 20px;
+      font-size: 34px;
       color: white;
-    
       a {
         margin-left: 15px;
         color: var(--secondary-color);
-        font-size: 24px; /* Aumentei o tamanho para os ícones */
+        font-size: 34px; /* Aumentei o tamanho para os ícones */
         transition: color 0.3s;
     
         &:hover {

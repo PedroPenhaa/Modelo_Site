@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Modelo</title>
-    <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="dist/css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-
-
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Site Modelo</title>
+        <link rel="stylesheet" href="css/style.min.css">
+        <link rel="stylesheet" href="dist/css/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <style>
+        </style>
+    </head>
 <body>
   
     <main>
@@ -22,7 +22,8 @@
                 <!-- Logo -->
                 <div class="logo">
                     <a href="#">
-                        <img src="../img/logo" alt="Logo" />
+                        <img src="img/logo.png" alt="Logo" />
+
                     </a>
                 </div>
                 
@@ -39,9 +40,9 @@
         
                 <!-- Social Icons -->
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fas fa-phone"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp" style="font-size: 24px;"></i></a>
+                    <a href="#"><i class="fab fa-instagram" style="font-size: 24px;"></i></a>
+                    <a href="#"><i class="fas fa-phone" style="font-size: 24px;"></i></a>
                 </div>
         
                <!-- Mobile Menu Button -->
@@ -68,11 +69,34 @@
         </header>
 
         <!--============================= Home =============================-->
-        <section class="container-fluid" id="s__home">
-            <div class="container">
-                <h1>Home</h1>
+      <section class="container-fluid" id="s__home">
+
+            <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="30"
+                centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+                <swiper-slide>Slide 1</swiper-slide>
+                <swiper-slide>Slide 2</swiper-slide>
+                <swiper-slide>Slide 3</swiper-slide>
+                <swiper-slide>Slide 4</swiper-slide>
+                <swiper-slide>Slide 5</swiper-slide>
+            </swiper-container>
+
+
+            <!-- Autoplay progress indicator -->
+            <div class="autoplay-progress">
+                <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="20"></circle>
+                </svg>
+                <span></span>
             </div>
-        </section>
+
+
+            <div class="info">
+                <h1>Seja bem Vindo</h1>
+            </div>
+
+
+
+        </section>  
 
         <!--============================= Imóveis =============================-->
         <section class="container-fluid" id="s__imoveis">
@@ -127,6 +151,24 @@
     </main>
 
     <script src="js/app.min.js"></script>
+
+
+
+   <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    const progressCircle = document.querySelector(".autoplay-progress svg");
+    const progressContent = document.querySelector(".autoplay-progress span");
+
+    const swiperEl = document.querySelector("swiper-container");
+    swiperEl.addEventListener("autoplaytimeleft", (e) => {
+      const [swiper, time, progress] = e.detail;
+      progressCircle.style.setProperty("--progress", 1 - progress);
+      progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+    });
+  </script>
 
 
     <script>
