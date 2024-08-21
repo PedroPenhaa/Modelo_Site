@@ -32,7 +32,7 @@
                     <ul>
                         <li><a href="#s__home">Home</a></li>
                         <li>
-                            <a href="#s__imoveis" class="imoveis-link" onclick="toggleDropdown()">Imóveis</a>
+                            <a href="#" class="imoveis-link" onclick="toggleDropdown()">Imóveis</a>
                             <ul id="imoveisDropdown" class="dropdown">
                                 <li><a href="#s__sobre">Locação</a></li>
                                 <li><a href="#">Venda</a></li>
@@ -79,7 +79,7 @@
       <section class="container-fluid" id="s__home">
 
             <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="10"
-                centered-slides="true" autoplay-delay="5500" autoplay-disable-on-interaction="false">
+                centered-slides="true" autoplay-delay="9000" autoplay-disable-on-interaction="false">
                
                 <swiper-slide>
                     <img src="img/background_1.jpg" >
@@ -184,14 +184,14 @@
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
-  spaceBetween: 30,
+  spaceBetween: 10,
   centeredSlides: true,
   autoplay: {
     delay: 20000, // 20 segundos entre cada slide
     disableOnInteraction: false,
   },
-  speed: 3000, // Velocidade da transição ajustada para 3 segundos
-  effect: 'fade', // Adiciona efeito de fade para uma transição mais suave
+  speed: 9000, // Velocidade da transição ajustada para 3 segundos
+  effect: 'fade-in', // Adiciona efeito de fade para uma transição mais suave
 });
 
 
