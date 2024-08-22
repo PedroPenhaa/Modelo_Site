@@ -7,6 +7,14 @@
             color: white;
             font-weight: bold;
             font-size: 1.2rem; 
+            margin: 0;
+            strong{
+                img{
+                    margin-top: -3px;
+                    height: 40px; 
+                    width: auto;
+                }
+            }
           }
     }
 
@@ -16,13 +24,18 @@
         padding: 8px 0 2px 0;
         .container{
             @include flex(column, center, center);
-            gap: 0;
+            gap: 5px;
+            padding: 0 0 10px 0;
             p {
                 color: white;
                 font-weight: bold;
-                font-size: 0.8rem; 
+                font-size: 1.1rem; 
                 strong{
-                    font-size: 0.9rem;
+                    img{
+                        margin: 0;
+                        height: 37px;
+                    }
+                    
                 }
             }
         }

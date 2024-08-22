@@ -1,5 +1,4 @@
 #s__header {
-  //background-color: rgba(0, 0, 0, 0.1); /* Preto com 50% de transparência */
   background-color: black;
   border-bottom: 1px solid #eaeaea;
 
@@ -15,7 +14,6 @@
         height: auto;
         display: block;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
-
       }
     }
 
@@ -25,10 +23,10 @@
         @include flex(row, center, center);
         gap: 30px;
         margin: 0;
-    
+
         li {
           position: relative;
-    
+
           a {
             text-decoration: none;
             font-size: 1.8rem;
@@ -37,30 +35,33 @@
             transition: color 0.3s;
             position: relative;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
-            transition: color 0.9s, text-shadow 0.1s;  
-    
-          
+            transition: color 0.9s, text-shadow 0.1s;
+
             &:hover {
               color: #007bff;
               text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.0); 
             }
           }
-    
-          // Dropdown menu para o item Imóveis
+
           &:nth-child(2) {
+            // Dropdown menu para o item Imóveis
             ul {
-              display: none;
+              display: block; /* Muda para block para permitir transição */
+              height: 0; 
+              overflow: hidden; /* Impede que o conteúdo extravase durante a animação */
+              opacity: 0; 
+              transition: height 0.5s ease, opacity 0.5s ease;
               position: absolute;
               top: 100%;
               left: 0;
               background-color: white;
               box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
               z-index: 1;
-    
+
               li {
                 padding: 10px 20px;
                 white-space: nowrap;
-    
+
                 a {
                   color: black;
                   font-size: 1.6rem;
@@ -70,21 +71,39 @@
                     color: #007bff;
                   }
                 }
+
+                // Aplica a borda em todos menos o último item
+                &:not(:last-child) {
+                  border-bottom: 1px solid grey;
+                }
               }
             }
-    
+
             &:hover ul {
-              display: block;
-            }
-    
-            // Rotaciona a seta ao hover do dropdown
-            &:hover a::after {
-              transform: rotate(180deg); /* Rotaciona a seta para cima */
+              height: auto;
+              padding: 10px 15px;
+              border-radius: 5px;
+              opacity: 1;
             }
           }
         }
       }
+
+      .imoveis-link {
+        &::after {
+          content: "\f078"; 
+          font-family: 'Font Awesome 5 Free';
+          font-weight: 900;
+          margin-left: 8px;
+          transition: transform 0.3s;
+        }
+
+        &:hover::after {
+          transform: rotate(180deg); 
+        }
+      }
     }
+
     .social-icons {
       @include flex(row, center, center);
       gap: 20px;
@@ -184,7 +203,7 @@
     }
 
     .mobile-nav.active {
-      height: 32vh;
+      height: auto;
       margin-top: 99px;
       display: flex !important;
       clip-path: circle(1500px at 90% -15%);
@@ -199,11 +218,11 @@
       .bar:nth-child(1) {
         transform: translateY(10px) rotate(45deg); 
       }
-    
+
       .bar:nth-child(2) {
         opacity: 0;
       }
-    
+
       .bar:nth-child(3) {
         transform: translateY(-14px) rotate(-45deg);
       }

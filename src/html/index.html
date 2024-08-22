@@ -79,7 +79,7 @@
       <section class="container-fluid" id="s__home">
 
             <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" navigation="true" space-between="10"
-                centered-slides="true" autoplay-delay="9000" autoplay-disable-on-interaction="false">
+                centered-slides="true" autoplay-delay="5000" autoplay-disable-on-interaction="false">
                
                 <swiper-slide>
                     <img src="img/background_1.jpg" >
@@ -159,9 +159,10 @@
         <!--============================= Footer =============================-->
         <footer class="container-fluid" id="s__footer">
             <div class="container">
-                <p>Todos os direitos reservados a Empresa Exemplo © 2024</p>
-                <p>Desenvolvido por <strong>Pedro Penha</strong></p>
-            </div>
+                <p>Todos os direitos reservados a Exemplo © 2024</p>
+            <!--    <p>Desenvolvido por <strong><img src="/img/logo_pedro.png"></strong></p>  -->
+            <p><strong><img src="/img/logo_pedro.png"></strong></p>
+        </div>
         </footer>
 
     </main>
@@ -218,6 +219,16 @@
        document.querySelector('.mobile-nav').classList.toggle('active');
        document.querySelector('.hamburger').classList.toggle('active');
        });
+
+
+       document.querySelectorAll('.mobile-nav a').forEach(link => {
+  link.addEventListener('click', function() {
+    const mobileNav = document.querySelector('.mobile-nav');
+    const hamburger = document.querySelector('.hamburger');
+    mobileNav.classList.remove('active');
+    hamburger.classList.remove('active');
+  });
+});
 
     </script>
 
