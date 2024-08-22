@@ -4,6 +4,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const browserSync = require('browser-sync').create();
 
+// Tarefa para processar e minificar os arquivos SCSS
 function styles() {
     return gulp.src('src/scss/**/*.scss')
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
@@ -12,6 +13,7 @@ function styles() {
         .pipe(browserSync.stream());
 }
 
+// Tarefa para concatenar e minificar os arquivos JavaScript
 function scripts() {
     return gulp.src('src/js/**/*.js')
         .pipe(concat('app.min.js'))
@@ -20,12 +22,14 @@ function scripts() {
         .pipe(browserSync.stream());
 }
 
+// Tarefa para mover os arquivos HTML para a pasta dist
 function html() {
     return gulp.src('src/html/**/*.html')
         .pipe(gulp.dest('dist'))
         .pipe(browserSync.stream());
 }
 
+// Tarefa para servir o projeto usando BrowserSync e observar mudanças nos arquivos
 function serve() {
     browserSync.init({
         server: './dist'
@@ -37,10 +41,15 @@ function serve() {
     gulp.watch('src/html/**/*.html').on('change', browserSync.reload);
 }
 
-// Adiciona a tarefa default
-gulp.task('default', gulp.series(styles, scripts, html, serve));
+// Tarefa build que compila estilos, scripts e html
+const build = gulp.series(styles, scripts, html);
 
+// Tarefa default que inicia a build e o servidor
+gulp.task('default', gulp.series(build, serve));
+
+// Exportações para permitir a execução das tarefas individualmente
 exports.styles = styles;
 exports.scripts = scripts;
 exports.html = html;
-exports.serve = gulp.series(styles, scripts, html, serve);
+exports.serve = serve;
+exports.build = build;  // Torna a tarefa de build disponível como uma tarefa pública
